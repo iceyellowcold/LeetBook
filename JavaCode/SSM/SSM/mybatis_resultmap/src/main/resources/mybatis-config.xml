@@ -7,7 +7,7 @@
     <properties resource="jdbc.properties"></properties>
 
     <typeAliases>
-        <package name=""/>
+        <package name="com.yellow.mybatis.pojo"/>
     </typeAliases>
     <environments default="development">
         <environment id="development">
@@ -22,6 +22,6 @@
     </environments>
     <mappers>
         <!--<mapper resource="mappers/UserMapper.xml"/>-->
-        <package name=""/>
+        <package name="com.yellow.mybatis.mapper"/>
     </mappers>
 </configuration>
