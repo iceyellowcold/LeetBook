@@ -1,5 +1,7 @@
 package com.yellow;
 
+import java.util.HashSet;
+
 /**
  * @author yellow
  * @version 1.0
@@ -36,5 +38,33 @@ public class Solution {
             }
         }
         return totals;
+    }
+
+    public void rotate(int[] nums, int k) {
+        k%=nums.length;
+        if(nums.length!=1) {
+            reverse(nums, 0, nums.length - 1);
+            reverse(nums, 0, k - 1);
+            reverse(nums, k, nums.length - 1);
+        }
+    }
+
+    public void reverse(int[] nums,int start,int end){
+        while (start<end){
+            int temp=nums[start];
+            nums[start++]=nums[end];
+            nums[end--]=temp;
+        }
+    }
+
+    public boolean containsDuplicate(int[] nums) {
+        HashSet<Integer> integers = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            boolean add = integers.add(nums[i]);
+            if(!add){
+                return true;
+            }
+        }
+        return false;
     }
 }
